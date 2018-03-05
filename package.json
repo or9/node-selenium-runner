@@ -9,7 +9,10 @@
     "phantomjs": "^2.1.7",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "asar": "^0.14.2",
+    "electron": "^1.8.2"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "mocha *.spec.js"
