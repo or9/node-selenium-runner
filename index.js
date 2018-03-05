@@ -8,17 +8,6 @@ const path = require("chromedriver").path;
 
 const service = new chrome.ServiceBuilder(path).build();
 chrome.setDefaultService(service);
-// const casper = require("casper").create();
-
-// casper.start("http://casperjs.org")
-// 	.then(() => {
-// 		console.log("done it");
-// 	})
-
-// casper.run();
-
-// process.env.PATH = `${process.env.PWD}/node_modules/.bin:${process.env.PATH}`;
-// console.log("path???", process.env.PATH);
 
 (async function () {
 	var driver = await new Builder()
@@ -27,10 +16,31 @@ chrome.setDefaultService(service);
 
 	try {
 		console.log(green.open, "running...", green.close);
-
+		await driver.get("http://www.google.com/ncr");
+		await driver.findElement(By.name("q")).sendKeys("webdriverrrr", Key.RETURN);
+		await driver.wait(until.titleIs("webdriverrrr - Google Search"), 1000);
 	} catch (err) {
 		console.error(red.open, err, red.close);
 	} finally {
 		await driver.quit();
 	}
 })();
+
+// var driver = new Builder()
+// 	.withCapabilities(Capabilities.chrome())
+// 	.build();
+
+// driver.get("http://www.google.com/ncr")
+// 	.then(() => {
+// 		return driver.findElement(By.name("q")).sendKeys("webdriver", Key.RETURN);
+// 	})
+// 	.then(() => {
+// 		return driver.wait(until.titleIs("webdriver - Google Search"), 1000);
+// 	})
+	// .then(() => {
+	// 	driver.quit();
+	// })
+// 	.catch(err => {
+// 		console.error(red.open, err, red.close);
+		// driver.quit();
+	// })
