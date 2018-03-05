@@ -31,10 +31,22 @@ var driver = new Builder()
 	.build();
 
 driver.get("http://www.google.com/ncr")
-	.then(() => driver.findElement(By.name("q")).sendKeys("webdriver", Key.RETURN))
-	.then(() =>  driver.wait(until.titleIs("webdriver - Google Search"), 1000))
-	.then(() => driver.quit())
+	.then(findQ)
+	.then(fillOutForm)
+	.then(quit)
 	.catch(err => {
 		console.error(red.open, err, red.close);
-		driver.quit();
+		return quit();
 	})
+
+function findQ () {
+	return  driver.findElement(By.name("q")).sendKeys("webdriver", Key.RETURN);
+}
+
+function fillOutForm () {
+	return driver.wait(until.titleIs("webdriver - Google Search"), 1000);
+}
+
+function quit () {
+	return driver.quit();
+}
