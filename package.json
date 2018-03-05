@@ -1,0 +1,30 @@
+{
+  "name": "selenium-runner",
+  "version": "0.0.1",
+  "description": "runnit",
+  "main": "index.js",
+  "dependencies": {
+    "ansi-colors": "^1.1.0",
+    "chromedriver": "^2.35.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha *.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/or9/node-selenium-runner.git"
+  },
+  "keywords": [
+    "selenium",
+    "chromedriver",
+    "automation"
+  ],
+  "author": "Abdur Rahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/or9/node-selenium-runner/issues"
+  },
+  "homepage": "https://github.com/or9/node-selenium-runner#readme"
+}
