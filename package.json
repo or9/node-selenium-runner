@@ -6,6 +6,7 @@
   "dependencies": {
     "ansi-colors": "^1.1.0",
     "chromedriver": "^2.35.0",
+    "phantomjs": "^2.1.7",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "devDependencies": {},
